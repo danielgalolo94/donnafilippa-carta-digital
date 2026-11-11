@@ -1,0 +1,14 @@
+# Menú real del cliente (no publicar)
+carta/
+
+# Archivos pesados/intermedios
+video/raw.webm
+presentacion/preview/
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Entorno
+.env
+.env.*
+node_modules/

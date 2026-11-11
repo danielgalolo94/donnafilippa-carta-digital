@@ -1,0 +1,14 @@
+DESKTOP "{\"fonts\":{\"fraunces\":false,\"inter\":true},\"overflow\":false,\"badRows\":[],\"rail\":\"flex 348\",\"qrVisible\":\"348x253.0625\"}"
+[agent-browser] restore: missing; save: saved
+MOBILE "{\"fonts\":{\"fraunces\":false,\"inter\":true},\"overflow\":false,\"badRows\":[],\"rail\":\"grid 362\",\"qrVisible\":\"362x253.0625\"}"
+[agent-browser] restore: missing; save: saved
+PCT before="16.900"
+[agent-browser] restore: missing; save: saved after=[agent-browser] restore: missing; save: saved
+"18.600" previewPizza="Muzzarella\n18.600"
+[agent-browser] restore: missing; save: saved
+UNDO pizza="18.600"
+[agent-browser] restore: missing; save: saved
+TOGGLE rowClass="dg-row"
+[agent-browser] restore: missing; save: saved
+PUBLISH "Publicado hace 2 días"
+[agent-browser] restore: missing; save: saved

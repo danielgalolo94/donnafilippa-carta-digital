@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="es-AR" data-view="carta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donna Filippa · Carta — Dirección A · Trattoria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/panel.css">
+<style>
+  :root{
+    --crema:#FBF7F2; --papel:#FFFDFA; --tinta:#1C1412; --tinta2:#5B4B44;
+    --tera:#9F3B27; --tera2:#822720; --arena:#E7DDD3; --arena2:#CFC1B4;
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:Inter,system-ui,-apple-system,sans-serif;
+    --qr-bg:#F2EEE7; --qr-acc:#9F3B27; --qr-serif:"Fraunces",Georgia,serif;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--crema);color:var(--tinta);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  .wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+  a{text-decoration:none}
+
+  /* ---------- top ---------- */
+  .top{background:rgba(251,247,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--arena)}
+  .top-in{display:flex;align-items:center;gap:16px;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand img{height:44px;width:auto;border-radius:7px;background:#fff;padding:5px 8px;box-shadow:0 0 0 1px var(--arena2)}
+  .brand b{display:block;font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
+  .brand small{display:block;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--tinta2);margin-top:3px}
+  .top-meta{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:12.5px;color:var(--tinta2)}
+  .open{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:#2F6B45}
+  .open i{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 0 3px rgba(47,107,69,.14)}
+  .top-meta .tel{font-weight:600;color:var(--tinta);border-bottom:1px solid var(--arena2);padding-bottom:1px}
+  @media(max-width:720px){
+    .top-meta .open{display:none}
+    .brand img{height:35px;padding:4px 6px}
+    .brand b{font-size:17px}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:46px 0 26px;position:relative}
+  .kicker{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tera)}
+  .kicker::before{content:"";width:34px;height:1px;background:var(--tera);opacity:.5}
+  h1{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(46px,8.5vw,86px);line-height:.92;letter-spacing:-.03em}
+  h1 em{font-style:italic;color:var(--tera)}
+  .hero p{margin:18px 0 0;max-width:54ch;font-size:15.5px;line-height:1.65;color:var(--tinta2)}
+  .hero .ejemplo{display:inline-flex;align-items:center;gap:7px;margin-top:20px;padding:7px 11px;border:1px solid var(--arena);border-radius:999px;background:var(--papel);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta2)}
+  .hero .ejemplo i{width:5px;height:5px;border-radius:50%;background:var(--tera)}
+
+  /* ---------- layout ---------- */
+  .layout{display:grid;grid-template-columns:1fr;gap:34px;padding-bottom:40px}
+  @media(min-width:980px){ .layout{grid-template-columns:292px minmax(0,1fr);gap:56px;padding-bottom:64px} }
+
+  /* ---------- side ---------- */
+  .side{order:2;display:flex;flex-direction:column;gap:16px}
+  @media(min-width:980px){ .side{order:1;position:sticky;top:56px;align-self:start} }
+  .side-card{background:var(--papel);border:1px solid var(--arena);border-top:2px solid var(--tera);padding:20px 20px 18px}
+  .side-k{margin:0 0 10px;font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tera)}
+  .side-card p{margin:0 0 14px;font-size:12.5px;line-height:1.7;color:var(--tinta2)}
+  .side-card p b{color:var(--tinta);font-weight:600}
+  .side-dl{margin:0;display:grid;gap:8px;font-size:12px;color:var(--tinta2);border-top:1px solid var(--arena);padding-top:14px}
+  .side-dl div{display:flex;gap:8px;justify-content:space-between}
+  .side-dl dt{opacity:.75}
+  .side-dl dd{margin:0;font-weight:600;color:var(--tinta);text-align:right}
+  .side-qr{display:flex;align-items:center;gap:14px;margin-top:16px;padding-top:16px;border-top:1px solid var(--arena)}
+  .side-qr img{width:92px;height:92px;flex:none;border:1px solid var(--arena);padding:5px;background:#fff}
+  .side-qr b{display:block;font-size:12.5px;font-weight:600;line-height:1.3}
+  .side-qr span{display:block;margin-top:4px;font-size:11px;line-height:1.5;color:var(--tinta2)}
+
+  /* ---------- chips ---------- */
+  .chips{position:sticky;top:38px;z-index:20;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding:10px 0 12px;margin:0 0 4px;background:linear-gradient(var(--crema) 70%,rgba(251,247,242,.86));backdrop-filter:blur(6px)}
+  .chips::-webkit-scrollbar{display:none}
+  .chips a{flex:none;padding:8px 13px;border:1px solid var(--arena);border-radius:999px;font-size:11.5px;font-weight:600;letter-spacing:.02em;color:var(--tinta2);background:var(--papel);transition:border-color .15s,color .15s}
+  .chips a:hover,.chips a:focus-visible{border-color:var(--tera);color:var(--tera)}
+  .chips a .c{margin-left:6px;font-size:10px;opacity:.55;font-variant-numeric:tabular-nums}
+
+  /* ---------- categorías ---------- */
+  .cat{padding-top:28px;scroll-margin-top:104px}
+  .cat:first-of-type{padding-top:10px}
+  .cat-head{display:flex;align-items:baseline;gap:14px;padding-bottom:12px;border-bottom:1.5px solid var(--tinta)}
+  .cat-num{font-family:var(--serif);font-size:12px;font-weight:600;color:var(--tera);font-variant-numeric:tabular-nums}
+  .cat-head h2{margin:0;font-family:var(--serif);font-size:clamp(24px,3.4vw,32px);font-weight:500;letter-spacing:-.015em}
+  .cat-head .cnt{margin-left:auto;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta2)}
+  .cat-note{margin:10px 0 0;font-size:12px;font-style:italic;color:var(--tinta2)}
+
+  .dish{padding:16px 0 15px;border-bottom:1px solid var(--arena)}
+  .dish:last-child{border-bottom:0}
+  .dish-top{display:flex;align-items:baseline;gap:10px}
+  .dish h3{margin:0;font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+  .dots{flex:1;min-width:18px;border-bottom:1px dotted var(--arena2);transform:translateY(-4px)}
+  .price{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--tera2);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .dish p{margin:5px 0 0;max-width:60ch;font-size:13px;line-height:1.55;color:var(--tinta2)}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .tags span{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 6px;border:1px solid var(--arena);color:var(--tinta2);background:#fff}
+  .tags .veg{color:#2F6B45;border-color:#CBDCCD;background:#F3F8F3}
+  .tags .new{color:var(--tera);border-color:#E4C4BA;background:#FDF3EF}
+
+  /* ---------- footer ---------- */
+  .foot{background:var(--tinta);color:#EFE6DC;padding:40px 0 30px}
+  .foot-in{display:grid;gap:24px}
+  @media(min-width:760px){ .foot-in{grid-template-columns:1.2fr 1fr 1fr;gap:32px} }
+  .foot h3{margin:0 0 8px;font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:-.01em}
+  .foot p,.foot a{margin:0;font-size:12.5px;line-height:1.7;color:#C9BCB0}
+  .foot a:hover{color:#fff}
+  .foot .lbl{display:block;margin-bottom:8px;font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#A08D7E}
+  .foot .links{display:grid;gap:5px}
+  .foot-rule{border-top:1px solid rgba(255,255,255,.12);margin-top:28px;padding-top:16px;font-size:10.5px;color:#8E7F72;display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between}
+  .dg-strip{background:var(--crema)}
+</style>
+</head>
+<body>
+
+<div class="reviewbar">
+  <a class="back" href="index.html" title="Volver a las 3 direcciones">←</a>
+  <span class="mk"><span class="dot"></span><b>Donna Filippa</b><span>· mockup A</span></span>
+  <nav>
+    <button data-view="carta" aria-selected="true">Carta</button>
+    <button data-view="panel" aria-selected="false">Panel del dueño</button>
+    <button data-view="qr" aria-selected="false">QR de mesa</button>
+  </nav>
+</div>
+
+<!-- ================= CARTA PÚBLICA ================= -->
+<main id="carta">
+
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="#carta">
+        <img src="img/logo-filippa.png" alt="Donna Filippa">
+        <small>Pizzería y pastas · Villa Gesell</small>
+      </a>
+      <div class="top-meta">
+        <span class="open"><i></i>Abierto · horario de ejemplo</span>
+        <a class="tel" href="tel:+542255466195">(02255) 466-195</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero wrap">
+    <p class="kicker">Desde 1986 · Paseo 102 y Av. 3</p>
+    <h1>La carta<br><em>de la familia</em></h1>
+    <p>Pizzas a la piedra, pastas amasadas cada mañana y la cocina de una familia italiana que hace 40 años pone la mesa en Villa Gesell.</p>
+    <span class="ejemplo"><i></i>Precios de ejemplo · pesos argentinos</span>
+  </section>
+
+  <div class="wrap layout">
+    <aside class="side">
+      <div class="side-card">
+        <p class="side-k">La casa</p>
+        <p>En <b>1986</b> José Luis Cabutti abrió la pizzería en la esquina de Paseo 102 y Av. 3. En <b>2012</b> tomó el nombre de <b>Donna Filippa</b>, en homenaje a la abuela inmigrante italiana.</p>
+        <dl class="side-dl">
+          <div><dt>Dirección</dt><dd>Av. 3 y Paseo 102</dd></div>
+          <div><dt>Teléfono</dt><dd>(02255) 466-195</dd></div>
+          <div><dt>Instagram</dt><dd>@donnafilippa.vg</dd></div>
+          <div><dt>Horario</dt><dd>19:00 a 00:30 *</dd></div>
+        </dl>
+        <div class="side-qr">
+          <img src="img/qr-carta.svg" alt="QR de la carta">
+          <div><b>Llevate la carta</b><span>Escaneá el QR y mirala en tu celular.</span></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="menu">
+      <nav class="chips" aria-label="Categorías">
+        <a href="#empezar">Para empezar<span class="c">4</span></a>
+        <a href="#pizzas">Pizzas<span class="c">5</span></a>
+        <a href="#pastas">Pastas<span class="c">3</span></a>
+        <a href="#postres">Postres<span class="c">2</span></a>
+      </nav>
+
+      <section class="cat" id="empezar">
+        <div class="cat-head"><span class="cat-num">01</span><h2>Para empezar</h2><span class="cnt">4 platos</span></div>
+        <article class="dish">
+          <div class="dish-top"><h3>Empanada criolla</h3><span class="dots"></span><span class="price">2.900</span></div>
+          <p>Carne cortada a cuchillo, huevo y aceituna.</p>
+        </article>
+        <article class="dish">
+          <div class="dish-top"><h3>Empanada de jamón y queso</h3><span class="dots"></span><span class="price">2.900</span></div>
+          <p>Masa fina, bien jugosa.</p>
+        </article>
+        <article class="dish">
+          <div class="dish-top"><h3>Fainá a la piedra</h3><span class="dots"></span><span class="price">3.400</span></div>
+          <p>Bien alta, con mucho queso.</p>
+          <div class="tags"><span class="veg">Veg</span></div>
+        </article>
+        <article class="dish">
+          <div class="dish-top"><h3>Burrata con tomates asados</h3><span class="dots"></span><span class="price">9.800</span></div>
+          <p>Albahaca fresca y aceite de oliva.</p>
+          <div class="tags"><span class="new">Nuevo</span></div>
+        </article>
+      </section>
+
+      <section class="cat" id="pizzas">
+        <div class="cat-head"><span class="cat-num">02</span><h2>Pizzas a la piedra</h2><span class="cnt">5 platos</span></div>
+        <p class="cat-note">Todas salen del horno de piedra, con masa de fermentación lenta.</p>
+        <article class="dish">
+          <div class="dish-top"><h3>Muzzarella</h3><span class="dots"></span><span class="price">16.900</span></div>
+          <p>Salsa de tomate, muzzarella de primera y orégano.</p>
+          <div class="tags"><span>La de siempre</span></div>
+        </article>
+        <article class="dish">
+          <div class="dish-top"><h3>Fugazzeta</h3><span class="dots"></span><span class="price">18.900</span></div>
+          <p>Cebolla, muzzarella y un toque de orégano.</p>
+          <div class="tags"><span class="veg">Veg</span></div>
+        </article>
+        <article class="dish">
+          <div class="dish-top"><h3>Napolitana</h3><span class="dots"></span><span class="price">18.400</span></div>
+          <p>Tomate, ajo, perejil y muzzarella.</p>
+        </article>
+        <article class="dish">
+          <div class="dish-top"><h3>Donna Filippa</h3><span class="dots"></span><span class="price">23.500</span></div>
+          <p>Jamón crudo, rúcula, burrata y oliva.</p>
+          <div class="tags"><span>De la casa</span></div>
+        </article>
+        <article class="dish">
+          <div class="dish-top"><h3>Calabresa</h3><span class="dots"></span><span class="price">19.900</span></div>
+          <p>Salame, morrón y huevo.</p>
+          <div class="tags"><span>Picante</span></div>
+        </article>
+      </section>
+
+      <section class="cat" id="pastas">
+        <div class="cat-head"><span class="cat-num">03</span><h2>Pastas caseras</h2><span class="cnt">3 platos</span></div>
+        <article class="dish">
+          <div class="dish-top"><h3>Ñoquis de papa</h3><span class="dots"></span><span class="price">15.900</span></div>
+          <p>Fileto o cuatro quesos, amasados cada mañana.</p>
+          <div class="tags"><span class="veg">Veg</span></div>
+        </article>
+        <article class="dish">
+          <div class="dish-top"><h3>Sorrentinos de jamón y queso</h3><span class="dots"></span><span class="price">17.400</span></div>
+          <p>Con crema de tomates secos.</p>
+          <div class="tags"><span class="veg">Sin TACC</span></div>
+        </article>
+        <article class="dish">
+          <div class="dish-top"><h3>Tagliatelle al ragú</h3><span class="dots"></span><span class="price">18.900</span></div>
+          <p>Cocción lenta de cuatro horas.</p>
+          <div class="tags"><span>De la casa</span></div>
+        </article>
+      </section>
+
+      <section class="cat" id="postres">
+        <div class="cat-head"><span class="cat-num">04</span><h2>Postres</h2><span class="cnt">2 platos</span></div>
+        <article class="dish">
+          <div class="dish-top"><h3>Tiramisú de la casa</h3><span class="dots"></span><span class="price">7.400</span></div>
+          <p>Receta de la nonna, con café.</p>
+        </article>
+        <article class="dish">
+          <div class="dish-top"><h3>Flan con dulce de leche</h3><span class="dots"></span><span class="price">6.200</span></div>
+          <p>Con crema batida.</p>
+          <div class="tags"><span class="veg">Veg</span></div>
+        </article>
+      </section>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <div>
+        <h3>Donna Filippa</h3>
+        <p>Pizzería y pastas caseras.<br>Av. 3 y Paseo 102, Villa Gesell.<br>(02255) 466-195</p>
+      </div>
+      <div>
+        <span class="lbl">Seguinos</span>
+        <div class="links">
+          <a href="https://www.instagram.com/donnafilippa.vg/" target="_blank" rel="noopener">Instagram · @donnafilippa.vg</a>
+          <a href="https://wa.me/542255466195" target="_blank" rel="noopener">WhatsApp · pedidos y reservas</a>
+        </div>
+      </div>
+      <div>
+        <span class="lbl">Horarios</span>
+        <p>Martes a domingo<br>19:00 a 00:30<br><span style="opacity:.7">* horario de ejemplo</span></p>
+      </div>
+    </div>
+    <div class="wrap foot-rule">
+      <span>Carta digital · precios y horarios de ejemplo</span>
+      <span>Los precios pueden cambiar sin aviso.</span>
+    </div>
+  </footer>
+  <div class="dg-strip">
+    <div class="dg-credit"><img src="img/dg-logo.png" alt="DG Soluciones IT"> Hecho por <b>DG Soluciones</b> <i>IT</i></div>
+  </div>
+</main>
+
+<!-- ================= PANEL DEL DUEÑO ================= -->
+<div id="panel" data-tpl="a"></div>
+
+<!-- ================= QR DE MESA ================= -->
+<section id="qr" class="qr-view">
+  <p class="qr-lead">Pieza para la mesa</p>
+  <div class="tent">
+    <img class="tent-logo" src="img/logo-filippa.png" alt="Donna Filippa">
+    <h2>Donna Filippa</h2>
+    <p class="tent-sub">Carta digital · Villa Gesell</p>
+    <img class="tent-qr" src="img/qr-carta.svg" alt="QR para ver la carta">
+    <p class="tent-cta">Escaneá y mirá la carta</p>
+    <p class="tent-small">Apuntá la cámara del celular al código.<br>No hace falta descargar nada.</p>
+    <span class="tent-url">donnafilippa.vg/carta</span>
+    <div class="tent-foot"><img src="img/dg-logo.png" alt=""> Hecho por DG Soluciones IT</div>
+  </div>
+  <p class="qr-note">Se imprime una vez y dura toda la temporada. Si cambia un precio, cambia la carta, no el QR.</p>
+  <div class="dg-credit"><img src="img/dg-logo.png" alt="DG Soluciones IT"> Hecho por <b>DG Soluciones</b> <i>IT</i></div>
+</section>
+
+<script src="assets/panel.js"></script>
+<script>
+  if (location.search.indexOf('embed') > -1) {
+    var rb = document.querySelector('.reviewbar');
+    if (rb) rb.style.display = 'none';
+    document.documentElement.style.setProperty('--top', '0px');
+  }
+</script>
+</body>
+</html>

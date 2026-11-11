@@ -1,0 +1,40 @@
+[a-trattoria 390x844] "{\"vw\":390,\"vh\":844,\"sw\":390,\"overflowX\":false,\"view\":\"carta\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección A · Trattoria\"}"
+[agent-browser] restore: missing; save: saved
+[a-trattoria 390x844 PANEL] [agent-browser] restore: missing; save: saved
+"{\"vw\":390,\"vh\":844,\"sw\":390,\"overflowX\":false,\"view\":\"panel\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección A · Trattoria\"}"
+[a-trattoria 820x1180] "{\"vw\":820,\"vh\":1180,\"sw\":820,\"overflowX\":false,\"view\":\"carta\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección A · Trattoria\"}"
+[agent-browser] restore: missing; save: saved
+[a-trattoria 820x1180 PANEL] "{\"vw\":820,\"vh\":1180,\"sw\":820,\"overflowX\":false,\"view\":\"panel\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección A · Trattoria\"}"
+[agent-browser] restore: missing; save: saved
+[a-trattoria 1180x820] [agent-browser] restore: missing; save: saved
+"{\"vw\":1180,\"vh\":820,\"sw\":1180,\"overflowX\":false,\"view\":\"carta\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección A · Trattoria\"}"
+[a-trattoria 1180x820 PANEL] "{\"vw\":1180,\"vh\":820,\"sw\":1180,\"overflowX\":false,\"view\":\"panel\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección A · Trattoria\"}"
+[agent-browser] restore: missing; save: saved
+[b-noche 390x844] "{\"vw\":390,\"vh\":844,\"sw\":390,\"overflowX\":false,\"view\":\"carta\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\",\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección B · Noche\"}"
+[agent-browser] restore: missing; save: saved
+[b-noche 390x844 PANEL] [agent-browser] restore: missing; save: saved
+"{\"vw\":390,\"vh\":844,\"sw\":390,\"overflowX\":false,\"view\":\"panel\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\",\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección B · Noche\"}"
+[b-noche 820x1180] "{\"vw\":820,\"vh\":1180,\"sw\":820,\"overflowX\":false,\"view\":\"carta\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\",\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección B · Noche\"}"
+[agent-browser] restore: missing; save: saved
+[b-noche 820x1180 PANEL] "{\"vw\":820,\"vh\":1180,\"sw\":820,\"overflowX\":false,\"view\":\"panel\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\",\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección B · Noche\"}"
+[agent-browser] restore: missing; save: saved
+[b-noche 1180x820] [agent-browser] restore: missing; save: saved
+"{\"vw\":1180,\"vh\":820,\"sw\":1180,\"overflowX\":false,\"view\":\"carta\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\",\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección B · Noche\"}"
+[b-noche 1180x820 PANEL] "{\"vw\":1180,\"vh\":820,\"sw\":1180,\"overflowX\":false,\"view\":\"panel\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\",\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección B · Noche\"}"
+[agent-browser] restore: missing; save: saved
+[c-carta 390x844] [agent-browser] restore: missing; save: saved
+"{\"vw\":390,\"vh\":844,\"sw\":390,\"overflowX\":false,\"view\":\"carta\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección C · Carta\"}"
+[c-carta 390x844 PANEL] "{\"vw\":390,\"vh\":844,\"sw\":390,\"overflowX\":false,\"view\":\"panel\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección C · Carta\"}"
+[agent-browser] restore: missing; save: saved
+[c-carta 820x1180] "{\"vw\":820,\"vh\":1180,\"sw\":820,\"overflowX\":false,\"view\":\"carta\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección C · Carta\"}"
+[agent-browser] restore: missing; save: saved
+[c-carta 820x1180 PANEL] [agent-browser] restore: missing; save: saved
+"{\"vw\":820,\"vh\":1180,\"sw\":820,\"overflowX\":false,\"view\":\"panel\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección C · Carta\"}"
+[c-carta 1180x820] [agent-browser] restore: missing; save: saved
+"{\"vw\":1180,\"vh\":820,\"sw\":1180,\"overflowX\":false,\"view\":\"carta\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección C · Carta\"}"
+[c-carta 1180x820 PANEL] "{\"vw\":1180,\"vh\":820,\"sw\":1180,\"overflowX\":false,\"view\":\"panel\",\"panel\":true,\"rows\":14,\"imgsBroken\":[\"img/historia.jpg\"],\"title\":\"Donna Filippa · Carta — Dirección C · Carta\"}"
+[agent-browser] restore: missing; save: saved
+[index 1440x1000] "{\"vw\":1440,\"vh\":1000,\"sw\":1440,\"overflowX\":false,\"view\":null,\"panel\":false,\"rows\":0,\"imgsBroken\":[],\"title\":\"Donna Filippa · Carta digital — 3 direcciones · DG Soluciones IT\"}"
+[agent-browser] restore: missing; save: saved
+INDEX LINKS: [agent-browser] restore: missing; save: saved
+"[\"a-trattoria.html\",\"a-trattoria.html?v=panel\",\"b-noche.html\",\"b-noche.html?v=panel\",\"c-carta.html\",\"c-carta.html?v=panel\"]"

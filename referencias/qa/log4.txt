@@ -1,0 +1,16 @@
+FONTS "{\"f5\":true,\"f4\":false,\"i\":true,\"status\":\"loaded\"}"
+[agent-browser] restore: missing; save: saved
+CLICK-PUB "Publicado recién"
+[agent-browser] restore: missing; save: saved
+CLICK-TOGGLE ✗ Evaluation error: SyntaxError: Failed to execute 'querySelector' on 'Document': '[data-toggle= pizzas:0]' is not a valid selector.
+    at <anonymous>:1:16
+NATIVE-TOGGLE ✓ Done
+[agent-browser] restore: missing; save: saved
+AFTER-NATIVE ✗ Evaluation error: SyntaxError: Failed to execute 'querySelector' on 'Document': '[data-toggle= pizzas:1]' is not a valid selector.
+    at <anonymous>:1:34
+PCT5 [agent-browser] restore: missing; save: saved
+"17.700"
+TOAST-UNDO "16.900"
+[agent-browser] restore: missing; save: saved
+AFTER-UNDO "16.900"
+[agent-browser] restore: missing; save: saved

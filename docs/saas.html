@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo convertirla en SaaS · Donna Filippa — DG Soluciones IT</title>
+<meta name="description" content="Investigación de mercado argentino y plan para convertir la carta digital de Donna Filippa en un producto SaaS: precios, funciones, etapas, venta y riesgos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="index.html">
+      <img src="img/dg-logo.png" alt="DG Soluciones IT">
+      <span>DG Soluciones <i>IT</i></span>
+    </a>
+    <nav>
+      <a href="index.html#demo">Demo</a>
+      <a href="index.html#video">Video</a>
+      <a href="index.html#panel">Panel</a>
+      <a href="index.html#pdf">Propuesta</a>
+      <a href="saas.html">SaaS</a>
+    </nav>
+    <a class="btn p sm cta" href="index.html">Volver al proyecto</a>
+  </div>
+</header>
+
+<main>
+
+<section class="doc-hero">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--cyan)">Estrategia de producto · noviembre 2026</p>
+    <h1>De una carta para un cliente a un producto que se venda solo</h1>
+    <p>Investigación sobre competidores reales en Argentina y recomendaciones del sector gastronómico para convertir esta carta digital en un SaaS. El diferencial no es el QR: es <b style="color:#fff">actualizar precios en masa, en segundos, sin saber de sistemas</b>.</p>
+    <div class="meta">
+      <span>Benchmark AR</span><span>Producto por etapas</span><span>Precios y planes</span><span>Venta local</span><span>Riesgos</span><span>Roadmap 90 días</span>
+    </div>
+  </div>
+</section>
+
+<div class="doc-body">
+  <div class="wrap">
+
+    <p class="lead">Hoy hay <b>una carta digital muy bien hecha para un cliente</b>. Para que sea SaaS faltan cuatro cosas, en este orden: multi-local (cada restaurant con su cuenta y su link), alta sola (entrar, cargar y publicar sin que intervengamos), cobro automático y <b>una razón para pagar todos los meses</b>. El QR es gratis en todos lados; lo que se cobra es la gestión.</p>
+
+    <h2>1 · Benchmark real del mercado argentino</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Servicio</th><th>Precio ARS/mes</th><th>Cómo cobra</th><th>Qué incluye</th><th>Debilidad</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>MenuDig</b></td><td>$20.000</td><td>Plan único, IVA incl., Mercado Pago, 14 días sin tarjeta</td><td>Ilimitado, QR PNG, fotos, alérgenos, menús por horario, URL propia</td><td>Producto nuevo, poca marca</td></tr>
+          <tr><td><b>SoyMenu</b></td><td>$20.000</td><td>Armado gratis en 24 h, sin permanencia</td><td>Carta digital + carga hecha por ellos</td><td>Sin pedidos</td></tr>
+          <tr><td><b>Carta Digital QR</b></td><td>$15.000 / $25.000 / $45.000</td><td>Por cantidad de platos (30 / 100 / 500). Pago anticipado 1, 6 o 12 meses con precio congelado</td><td>Import Excel, variantes, adicionales, encuestas</td><td>Cobra por plato → caro al crecer</td></tr>
+          <tr><td><b>Qcarta</b> (Perú)</td><td>desde S/ 29,90</td><td>7 días gratis</td><td>Carrito + pedido a WhatsApp, sin comisión</td><td>No es Argentina</td></tr>
+          <tr><td><b>Encarta</b> (España)</td><td>30 €</td><td>Mensual</td><td>Alérgenos por plato, web incluida</td><td>No es Argentina</td></tr>
+          <tr><td><b>Shopify + apps</b></td><td>USD 150–300 total</td><td>Base + apps + comisión</td><td>Muy flexible</td><td>Stack de 5 plugins, lento, caro</td></tr>
+          <tr><td><b>Toast / Square</b></td><td>USD 0–165 + hardware + comisión</td><td>Ecosistema cerrado</td><td>POS fuerte</td><td>No sirve para vender solo la carta</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hint"><b>Lo que dice el mercado:</b> el precio de referencia es $20.000/mes todo incluido. Nadie cobra por cantidad de platos con éxito: queda caro justo cuando el cliente crece. Los 14 días sin tarjeta son el estándar. Y congelar el precio a 6 o 12 meses es una jugada muy argentina: le da previsibilidad al cliente y caja a nosotros.</div>
+
+    <h2>2 · Qué significa “SaaS” acá</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pieza</th><th>Hoy</th><th>Para ser SaaS</th></tr></thead>
+        <tbody>
+          <tr><td>Cuentas</td><td>1 cliente hardcodeado</td><td>Registro, login, recuperar clave, invitados</td></tr>
+          <tr><td>Datos</td><td>JSON en el navegador</td><td>Base multi-local con <code>tenant_id</code> en todo</td></tr>
+          <tr><td>Cartas</td><td>3 plantillas fijas</td><td>Plantillas + colores, logo y fotos del cliente</td></tr>
+          <tr><td>Links</td><td><code>file:///…</code></td><td><code>slug.dg.ar</code> o dominio propio con SSL</td></tr>
+          <tr><td>Cobro</td><td>—</td><td>Suscripción Mercado Pago + trial + factura</td></tr>
+          <tr><td>Soporte</td><td>WhatsApp de Daniel</td><td>Base de conocimiento + videos de 40 s</td></tr>
+          <tr><td>Métricas</td><td>—</td><td>Escaneos, platos vistos, clics a WhatsApp</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Regla de oro:</b> si para dar de alta un cliente hay que tocar código, no es SaaS. Es una agencia. La agencia escala con horas; el SaaS escala con producto.</p>
+
+    <h2>3 · Recomendaciones del sector gastronómico</h2>
+    <p>Ordenadas por impacto real en un local, no por lo lindo que suenan.</p>
+
+    <h3>Las cinco que definen si sirve o no</h3>
+    <ul>
+      <li><b>Plato agotado en un toque (“86”).</b> A las 21:30 se acabó la burrata: se apaga y desaparece de la carta, sin borrarla. Vuelve mañana con un clic.</li>
+      <li><b>Modificadores y variantes.</b> Tamaño (chica/grande), agregados (+muzzarella, +huevo), “sin cebolla”, “a punto”. Sube el ticket promedio y evita que el mozo explique todo de nuevo.</li>
+      <li><b>Menús por horario.</b> Desayuno, almuerzo, cena, happy hour: se activan solos. Un local de Villa Gesell cambia de carta en verano y en invierno.</li>
+      <li><b>Alérgenos y sellos.</b> Ley 27.642 (etiquetado frontal) y Ley 26.588 (celiaquía): el cliente espera ver “sin TACC”, “vegano”, “contiene frutos secos”. Es obligación y es el filtro más usado.</li>
+      <li><b>Actualización de precios en masa.</b> Ya está resuelta y es el corazón del producto. Falta programar el aumento por fecha (“desde el 1/12 +8%”) y el historial de quién cambió qué y cuándo.</li>
+    </ul>
+
+    <h3>Las que hacen que el cliente lo recomiende</h3>
+    <ul>
+      <li><b>Pedido por WhatsApp con carrito</b>, sin comisión. Competimos en comisión cero, no en logística.</li>
+      <li><b>Multiidioma (es / pt / en).</b> Villa Gesell recibe turismo brasileño: un botón y la carta cambia de idioma.</li>
+      <li><b>Fotos que cargan rápido.</b> Compresión automática, WebP/AVIF y CDN. En temporada la red del centro se satura.</li>
+      <li><b>Analítica simple.</b> “Tu carta se abrió 1.240 veces este mes; el plato más visto fue Fugazzeta; 87 personas tocaron WhatsApp”. Eso justifica la cuota.</li>
+      <li><b>Google.</b> Link de la carta en Google Business Profile + datos estructurados de menú. Tráfico gratis que casi nadie usa.</li>
+      <li><b>PDF de la carta actualizada</b> y <b>piezas de mesa listas para imprimir</b> (A5 y tent card). Mata la objeción “yo necesito la carta impresa”.</li>
+    </ul>
+
+    <h3>Para más adelante, no en el MVP</h3>
+    <ul>
+      <li>Integración con POS (Fudo, Bistrosoft, Tango, Woki) para no cargar dos veces.</li>
+      <li>Multi-sucursal con carta central y precios por local.</li>
+      <li>Reservas, fidelidad, cupones y autopedido en mesa.</li>
+    </ul>
+    <p><b>Lo que no haríamos:</b> app nativa (el QR abre el navegador, listo), delivery propio, facturación electrónica completa ni hardware.</p>
+
+    <h2>4 · Producto por etapas</h2>
+    <div class="cols">
+      <div class="k">
+        <b>Etapa 1 · Vendible</b>
+        <p><b>4 a 6 semanas.</b> Multi-local, registro y roles; editor guardando en base; 3 plantillas con logo y colores; publicar, deshacer e historial; link público + QR; ajuste por % y redondeo; alta guiada de 4 pasos.</p>
+        <p><b>Criterio:</b> un restaurant que nunca nos vio puede estar publicado en menos de 30 minutos, sin hablar con nosotros.</p>
+      </div>
+      <div class="k">
+        <b>Etapa 2 · Que valga la cuota</b>
+        <p><b>4 a 6 semanas.</b> Agotados en un toque, modificadores, menús por horario, alérgenos, multiidioma, analítica básica y suscripción con Mercado Pago + trial de 14 días.</p>
+        <p><b>Criterio:</b> el local lo usa todas las semanas sin que lo llamemos.</p>
+      </div>
+      <div class="k">
+        <b>Etapa 3 · Que no se vaya</b>
+        <p><b>6 a 8 semanas.</b> Pedido por WhatsApp con carrito, programar aumentos por fecha, PDF de carta, piezas de mesa, Google Business y multi-sucursal.</p>
+        <p><b>Criterio:</b> menos de 3% de bajas por mes.</p>
+      </div>
+    </div>
+
+    <h2>5 · Modelo de negocio</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Plan</th><th>Precio</th><th>Para quién</th><th>Incluye</th></tr></thead>
+        <tbody>
+          <tr><td><b>Carta</b></td><td>$19.900/mes</td><td>1 local, carta simple</td><td>Ilimitado, 3 plantillas, QR, alérgenos, multiidioma, 1 usuario</td></tr>
+          <tr><td><b>Carta + Pedidos</b></td><td>$29.900/mes</td><td>Local con delivery o take away</td><td>Todo + carrito WhatsApp, horarios, 3 usuarios, analítica</td></tr>
+          <tr><td><b>Cadena</b></td><td>$49.900/mes</td><td>2 a 5 locales</td><td>Todo + carta central, roles, reportes, dominio propio</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><b>Prueba:</b> 14 días sin tarjeta.</li>
+      <li><b>Anual:</b> 10 meses al precio de hoy (2 meses gratis): caja y precio congelado.</li>
+      <li><b>Temporada (Villa Gesell):</b> pausa de hasta 3 meses por año sin perder la carta.</li>
+      <li><b>Alta asistida:</b> $35.000 única (cargamos la carta, sacamos fotos, armamos el QR). Gratis en plan anual.</li>
+      <li><b>Add-ons:</b> dominio propio, fotos profesionales, traducción, impresión de piezas.</li>
+    </ul>
+
+    <div class="hint"><b>Por qué el alta asistida es clave:</b> es el 70% del trabajo de onboarding y el 90% de las cancelaciones tempranas (“no tuve tiempo de cargarla”). Se cobra una vez, deja margen y hace que el cliente vea valor el día 1. Baja el abandono de los primeros 60 días, que es donde se muere un SaaS de este tipo.</div>
+
+    <h3>Números que hay que vigilar</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Métrica</th><th>Meta</th></tr></thead>
+        <tbody>
+          <tr><td>Activación (carta publicada en 48 h)</td><td>más de 80%</td></tr>
+          <tr><td>Locales que editan al menos 1 vez por mes</td><td>más de 60% (si no editan, no les sirve)</td></tr>
+          <tr><td>Bajas mensuales</td><td>menos de 3%</td></tr>
+          <tr><td>Costo de infra por local</td><td>menos de USD 2</td></tr>
+          <tr><td>Margen bruto</td><td>más de 85%</td></tr>
+          <tr><td>NPS</td><td>más de 50</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>6 · Cómo se vende: Villa Gesell primero</h2>
+    <ul>
+      <li><b>Los diez locales de la cuadrilla.</b> No vendemos “a Argentina”: vendemos a diez restaurantes que se conocen entre sí. La prueba social es local.</li>
+      <li><b>Entrar antes de temporada.</b> Octubre y noviembre: el dueño está preparando el verano. En enero no atiende ni el teléfono.</li>
+      <li><b>Demo personalizada, no genérica.</b> Un link con <b>su propia carta ya cargada</b>, con sus platos y precios. Tarda 20 minutos y convierte mucho más que un video.</li>
+      <li><b>Alianza con imprentas y proveedores.</b> La imprenta que hoy le imprime la carta es el mejor vendedor: comisión o precio mayorista.</li>
+      <li><b>Referidos:</b> un mes gratis por cada local que trae.</li>
+      <li><b>Precio de lanzamiento</b> para los primeros diez: $14.900/mes de por vida (o dos años). Ancla el mercado y genera casos.</li>
+    </ul>
+
+    <h2>7 · Lo técnico que hay que resolver sí o sí</h2>
+    <ul>
+      <li><b>Multi-tenant:</b> <code>tenant_id</code> en todas las tablas, permisos por fila y un solo despliegue para todos.</li>
+      <li><b>Borrador vs publicado:</b> el dueño edita tranquilo y publica cuando quiere, con historial y “volver atrás”.</li>
+      <li><b>Imágenes:</b> subida, recorte, compresión y CDN. Una carta con 40 fotos no puede pesar 40 MB.</li>
+      <li><b>Velocidad:</b> la carta pública abre en menos de 2 segundos con 4G.</li>
+      <li><b>Dominio y SSL automático</b> por cliente.</li>
+      <li><b>Backups diarios</b> y restauración probada. Un restaurant no perdona perder la carta en plena temporada.</li>
+      <li><b>Auditoría:</b> quién cambió qué precio y cuándo.</li>
+      <li><b>Cobros:</b> Mercado Pago Suscripciones, webhooks, reintentos y comprobante. Facturación: exportación para el contador en la v1.</li>
+      <li><b>Legal:</b> Términos, Privacidad (Ley 25.326) y consentimiento si se guardan datos de comensales.</li>
+    </ul>
+
+    <h2>8 · Riesgos y cómo se mitigan</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Riesgo</th><th>Qué pasa</th><th>Mitigación</th></tr></thead>
+        <tbody>
+          <tr><td><b>Commoditización</b></td><td>Google, Meta y PedidosYa regalan una carta</td><td>Vender gestión, precios masivos y pedidos, no “un QR”</td></tr>
+          <tr><td><b>Estacionalidad</b></td><td>En invierno se cae el uso</td><td>Plan temporada + anual + vender también en Buenos Aires</td></tr>
+          <tr><td><b>Precio</b></td><td>“$20.000 es mucho para una carta”</td><td>Comparar con el costo de reimprimir 30 cartas por cambio</td></tr>
+          <tr><td><b>Soporte</b></td><td>Cada cliente llama por todo</td><td>Alta asistida, videos de 40 s, FAQ y horario de soporte claro</td></tr>
+          <tr><td><b>Dependencia de una persona</b></td><td>Todo lo hace Daniel</td><td>Documentar, plantillas y checklist de alta</td></tr>
+          <tr><td><b>Cliente que no edita</b></td><td>Paga tres meses y se va</td><td>Alerta si no edita en 45 días → llamada</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>9 · Roadmap de 90 días</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Semanas</th><th>Foco</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td>1–2</td><td>Multi-tenant, auth, editor en base</td><td>Se puede crear un local nuevo sin tocar código</td></tr>
+          <tr><td>3–4</td><td>Plantillas, imágenes, QR, dominio, publicación</td><td>Carta real publicada en un link</td></tr>
+          <tr><td>5–6</td><td>Alta guiada + cobro + trial + mails</td><td>Se puede vender sin intervención</td></tr>
+          <tr><td>7–8</td><td>Agotados, alérgenos, menús por horario</td><td>Producto que aguanta el día a día</td></tr>
+          <tr><td>9–10</td><td>Analítica, multiidioma, PDF de carta</td><td>Aparecen las razones para renovar</td></tr>
+          <tr><td>11–12</td><td>5 locales piloto en Villa Gesell + ajustes</td><td>Precio y discurso validados con clientes reales</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hint"><b>Antes de escribir una línea de código:</b> validar con 5 dueños que pagarían $20.000/mes por esto. Si 3 dicen que sí, se construye. Si no, se ajusta el precio o el alcance.</div>
+
+    <h2>10 · Lo que hay que decidir</h2>
+    <ul>
+      <li>¿Producto propio de DG o marca blanca para otros que vendan?</li>
+      <li>¿Precio de lanzamiento $14.900 o directo $19.900?</li>
+      <li>¿Alta asistida obligatoria los primeros 20 clientes? (recomendado: sí)</li>
+      <li>¿Villa Gesell solamente la primera temporada, o también Mar de las Pampas y Pinamar?</li>
+      <li>¿Dominio del producto? (<code>cartadg.ar</code>, <code>menudg.ar</code>, <code>lacartadigital.ar</code>…)</li>
+    </ul>
+
+    <h2>11 · Fuentes</h2>
+    <ul>
+      <li>MenuDig — precios y funciones · <a href="https://menudig.com.ar/precios" target="_blank" rel="noopener" style="color:var(--blue)">menudig.com.ar/precios</a></li>
+      <li>Carta Digital QR — planes AR e internacionales · <a href="https://cartadigitalqr.ar/precios-y-planes.php" target="_blank" rel="noopener" style="color:var(--blue)">cartadigitalqr.ar</a></li>
+      <li>SoyMenu — carta digital Argentina · soymenu.com.ar</li>
+      <li>Qcarta — pedidos a WhatsApp sin comisión · qcarta.com</li>
+      <li>Encarta Digital — alérgenos por plato · encartadigital.com</li>
+      <li>Rovela — guía de compra de software de menús 2026 (modificadores, agotados, datos estructurados, velocidad)</li>
+    </ul>
+
+    <div class="doc-nav">
+      <a class="btn p" href="index.html">Volver al proyecto</a>
+      <a class="btn" href="index.html#demo">Probar la demo</a>
+      <a class="btn" href="presentacion.pdf" target="_blank" rel="noopener">Ver la propuesta en PDF</a>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <img src="img/dg-logo.png" alt="DG Soluciones IT">
+        <div class="who"><b>DG Soluciones IT</b><br>Estrategia de producto · noviembre 2026</div>
+      </div>
+      <div class="contact">
+        <a href="https://wa.me/5491145367458" target="_blank" rel="noopener">+54 9 11 4536-7458</a>
+        <a href="mailto:danielga@msn.com">danielga@msn.com</a>
+        <a href="https://instagram.com/dgsolucionesok" target="_blank" rel="noopener">@dgsolucionesok</a>
+      </div>
+    </div>
+    <div class="legal">Los precios del benchmark son los publicados por cada servicio en noviembre de 2026. Los precios propios son una propuesta a validar.</div>
+  </div>
+</footer>
+
+</body>
+</html>

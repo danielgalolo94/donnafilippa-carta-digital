@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<title>Demo · Donna Filippa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{width:1600px; height:900px; overflow:hidden; background:#F4ECE3;
+    font-family:Inter,system-ui,-apple-system,sans-serif; color:#1C1412; -webkit-font-smoothing:antialiased}
+  .stage{position:relative; width:1600px; height:900px; overflow:hidden;
+    background:radial-gradient(120% 90% at 78% 8%, #FFFDFA 0%, #F7F0E8 46%, #EDE1D4 100%)}
+  .stage::before{content:""; position:absolute; inset:0;
+    background:radial-gradient(60% 50% at 12% 92%, rgba(159,59,39,.10), transparent 70%);
+    pointer-events:none}
+
+  .scene{position:absolute; inset:0; opacity:0; transform:translateY(10px);
+    transition:opacity .55s ease, transform .55s ease; pointer-events:none}
+  .scene.on{opacity:1; transform:none}
+
+  /* ---------- tipografía ---------- */
+  .kicker{display:flex; align-items:center; gap:14px; font-size:12px; font-weight:800;
+    letter-spacing:.24em; text-transform:uppercase; color:#9F3B27; margin-bottom:26px}
+  .kicker::before{content:""; width:38px; height:1.5px; background:#9F3B27; opacity:.55}
+  h2{font-family:Fraunces,Georgia,serif; font-weight:500; font-size:62px; line-height:.98; letter-spacing:-.025em}
+  h2 em{font-style:italic; color:#9F3B27}
+  .sub{margin-top:22px; font-size:21px; line-height:1.45; color:#6B5A52; max-width:520px}
+  .sub b{color:#1C1412; font-weight:700}
+
+  /* ---------- portada ---------- */
+  #s1{display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center}
+  #s1 img{width:430px}
+  #s1 .rule{width:90px; height:1.5px; background:#D3C5B8; margin:34px 0 30px}
+  #s1 h1{font-family:Fraunces,Georgia,serif; font-weight:500; font-size:64px; letter-spacing:-.03em; line-height:1}
+  #s1 p{margin-top:18px; font-size:20px; color:#6B5A52}
+  #s1 .pill{margin-top:34px; display:inline-flex; align-items:center; gap:10px;
+    padding:11px 20px; border:1px solid #D3C5B8; border-radius:999px;
+    font-size:12px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:#8A7A70}
+  #s1 .pill i{width:7px; height:7px; border-radius:50%; background:#9F3B27}
+
+  /* ---------- escena teléfono ---------- */
+  #s2 .copy{position:absolute; left:120px; top:250px; width:560px}
+  .phone-wrap{position:absolute; right:150px; top:110px; width:315px; height:656px;
+    border-radius:42px; background:#16110F; padding:11px;
+    box-shadow:0 40px 80px -30px rgba(28,20,18,.55), 0 0 0 1px rgba(0,0,0,.15)}
+  .phone-wrap::after{content:""; position:absolute; top:22px; left:50%; transform:translateX(-50%);
+    width:86px; height:6px; border-radius:99px; background:rgba(255,255,255,.16); z-index:3}
+  .phone-screen{position:relative; width:293px; height:634px; border-radius:32px; overflow:hidden; background:#000}
+  .phone-screen iframe{width:390px; height:844px; border:0; transform:scale(.7513); transform-origin:top left}
+
+  /* ---------- escena panel ---------- */
+  #s3 .head{position:absolute; left:120px; top:64px}
+  #s3 .head .kicker{margin-bottom:16px}
+  #s3 .head h2{font-size:44px}
+  .laptop{position:absolute; left:382px; top:222px; width:835px; height:580px;
+    border-radius:14px; overflow:hidden; background:#fff;
+    box-shadow:0 50px 90px -40px rgba(28,20,18,.55), 0 0 0 1px rgba(0,0,0,.12)}
+  .laptop iframe{width:1440px; height:1000px; border:0; transform:scale(.5799); transform-origin:top left}
+  .laptop::after{content:""; position:absolute; inset:0; pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.06); border-radius:14px}
+  .laptop-base{position:absolute; left:322px; top:800px; width:955px; height:14px;
+    border-radius:0 0 16px 16px; background:linear-gradient(#D9CCC0,#C9B9AB);
+    box-shadow:0 18px 30px -18px rgba(28,20,18,.5)}
+
+  /* ---------- cursor ---------- */
+  .cursor{position:absolute; left:0; top:0; width:26px; height:26px; z-index:40;
+    opacity:0; transition:transform .75s cubic-bezier(.33,.9,.3,1), opacity .3s;
+    filter:drop-shadow(0 3px 6px rgba(0,0,0,.35)); pointer-events:none}
+  .cursor.on{opacity:1}
+  .cursor.click{transform:var(--p) scale(.86)!important}
+  .ripple{position:absolute; width:26px; height:26px; margin:-13px 0 0 -13px; border-radius:50%;
+    border:2px solid #9F3B27; opacity:0; z-index:39; pointer-events:none}
+  .ripple.go{animation:rip .6s ease-out}
+  @keyframes rip{0%{opacity:.85; transform:scale(.4)}100%{opacity:0; transform:scale(3.2)}}
+
+  /* ---------- escena QR ---------- */
+  #s5 .copy{position:absolute; right:120px; top:250px; width:600px}
+  #s5 .tent{position:absolute; left:170px; top:110px; width:420px; border-radius:22px;
+    box-shadow:0 44px 80px -34px rgba(28,20,18,.6)}
+  #s5 .tent img{width:100%; display:block; border-radius:22px}
+
+  /* ---------- cierre ---------- */
+  #s6{display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center}
+  #s6 .logo-dg{height:64px; margin-bottom:36px}
+  #s6 h2{font-size:58px}
+  #s6 .lines{display:flex; gap:54px; margin-top:44px}
+  #s6 .lines div{font-size:19px; color:#4A3A33; font-weight:600}
+  #s6 .lines small{display:block; font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;
+    color:#9A8A80; margin-bottom:8px; font-weight:800}
+  #s6 .fine{margin-top:46px; font-size:14px; color:#9A8A80; letter-spacing:.04em}
+
+  /* ---------- barra de progreso ---------- */
+  .bar{position:absolute; left:0; right:0; bottom:0; height:4px; background:rgba(28,20,18,.07); z-index:50}
+  .bar i{display:block; height:100%; width:0; background:#9F3B27; opacity:.85}
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <!-- 1 · portada -->
+  <section class="scene on" id="s1">
+    <img src="../app/mockups/img/logo-filippa.png" alt="Donna Filippa">
+    <div class="rule"></div>
+    <h1>La carta digital</h1>
+    <p>Donna Filippa · Villa Gesell</p>
+    <span class="pill"><i></i>Cómo se usa · 40 segundos</span>
+  </section>
+
+  <!-- 2 · el cliente -->
+  <section class="scene" id="s2">
+    <div class="copy">
+      <p class="kicker">1 · El cliente</p>
+      <h2>Apunta la cámara<br><em>al código de la mesa</em></h2>
+      <p class="sub" id="cap2">Se abre la carta en su celular. <b>Sin descargar nada.</b></p>
+    </div>
+    <div class="phone-wrap"><div class="phone-screen"><iframe id="carta" src="../app/mockups/a-trattoria.html?embed=1" scrolling="no"></iframe></div></div>
+  </section>
+
+  <!-- 3 · el dueño -->
+  <section class="scene" id="s3">
+    <div class="head">
+      <p class="kicker">2 · El dueño</p>
+      <h2>Entra al panel y cambia el precio</h2>
+    </div>
+    <div class="laptop"><iframe id="panel" src="../app/mockups/a-trattoria.html?v=panel&amp;embed=1"></iframe></div>
+    <div class="laptop-base"></div>
+  </section>
+
+  <!-- 4 · resultado -->
+  <section class="scene" id="s4">
+    <div class="copy">
+      <p class="kicker">3 · Al instante</p>
+      <h2>El cliente ya ve<br><em>el precio nuevo</em></h2>
+      <p class="sub">El QR de la mesa <b>no se toca nunca</b>. Cambia la carta, no el código.</p>
+    </div>
+    <div class="phone-wrap"><div class="phone-screen"><iframe id="carta2" src="../app/mockups/a-trattoria.html?embed=1" scrolling="no"></iframe></div></div>
+  </section>
+
+  <!-- 5 · QR -->
+  <section class="scene" id="s5">
+    <div class="tent"><img src="../referencias/capturas/pdf-qr-tent.png" alt="Pieza de mesa"></div>
+    <div class="copy">
+      <p class="kicker">En la mesa</p>
+      <h2>Se imprime<br><em>una sola vez</em></h2>
+      <p class="sub">Y dura toda la temporada. Si cambia un precio, cambia la carta. <b>El código queda igual.</b></p>
+    </div>
+  </section>
+
+  <!-- 6 · cierre -->
+  <section class="scene" id="s6">
+    <img class="logo-dg" src="../app/mockups/img/dg-logo.png" alt="DG Soluciones IT">
+    <h2>Hablemos y lo vemos</h2>
+    <div class="lines">
+      <div><small>WhatsApp</small>+54 9 11 4536-7458</div>
+      <div><small>Mail</small>danielga@msn.com</div>
+      <div><small>Instagram</small>@dgsolucionesok</div>
+    </div>
+    <p class="fine">DG Soluciones IT · Carta digital para Donna Filippa</p>
+  </section>
+
+  <svg class="cursor" viewBox="0 0 24 24" fill="#fff" stroke="#1C1412" stroke-width="1.6">
+    <path d="M5.5 2.5 19 12.2l-6.1.9-3.2 6.4z"/>
+  </svg>
+  <div class="ripple" id="ripple"></div>
+  <div class="bar"><i id="prog"></i></div>
+</div>
+
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+  var scenes = { s1: $('#s1'), s2: $('#s2'), s3: $('#s3'), s4: $('#s4'), s5: $('#s5'), s6: $('#s6') };
+  var cursor = $('.cursor'), ripple = $('#ripple'), prog = $('#prog');
+  var T0 = 0;
+
+  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+  function show(id) {
+    Object.keys(scenes).forEach(function (k) { scenes[k].classList.toggle('on', k === id); });
+  }
+  function progress() {
+    var t = performance.now() - T0;
+    prog.style.width = Math.min(100, (t / 39000) * 100) + '%';
+    requestAnimationFrame(progress);
+  }
+
+  /* scroll suave dentro de un iframe */
+  function scrollTo(win, y, ms) {
+    return new Promise(function (res) {
+      var start = win.scrollY || win.document.documentElement.scrollTop || 0;
+      var t0 = performance.now();
+      function step(t) {
+        var k = Math.min(1, (t - t0) / ms);
+        var e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        win.scrollTo(0, start + (y - start) * e);
+        if (k < 1) requestAnimationFrame(step); else res();
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  /* mover el cursor a un elemento dentro de un iframe */
+  function pointAt(iframe, el, scale, extra) {
+    var fr = iframe.getBoundingClientRect();
+    var r = el.getBoundingClientRect();
+    var x = fr.left + r.left * scale + (r.width * scale) / 2;
+    var y = fr.top + r.top * scale + (r.height * scale) / 2;
+    return { x: x + (extra ? extra.x : 0), y: y + (extra ? extra.y : 0) };
+  }
+
+  function moveTo(p, ms) {
+    cursor.classList.add('on');
+    cursor.style.transition = 'transform ' + (ms || 700) + 'ms cubic-bezier(.33,.9,.3,1), opacity .3s';
+    cursor.style.setProperty('--p', 'translate(' + (p.x - 6) + 'px,' + (p.y - 3) + 'px)');
+    cursor.style.transform = 'translate(' + (p.x - 6) + 'px,' + (p.y - 3) + 'px)';
+    return sleep(ms || 700);
+  }
+
+  function clickFx(p) {
+    ripple.style.left = p.x + 'px';
+    ripple.style.top = p.y + 'px';
+    ripple.classList.remove('go');
+    void ripple.offsetWidth;
+    ripple.classList.add('go');
+    cursor.style.transform = 'translate(' + (p.x - 6) + 'px,' + (p.y - 3) + 'px) scale(.86)';
+    setTimeout(function () {
+      cursor.style.transform = 'translate(' + (p.x - 6) + 'px,' + (p.y - 3) + 'px) scale(1)';
+    }, 160);
+  }
+
+  function typeInto(input, text, per) {
+    return new Promise(function (res) {
+      input.focus();
+      var i = 0;
+      (function next() {
+        input.value = text.slice(0, ++i);
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        if (i < text.length) setTimeout(next, per); else res();
+      })();
+    });
+  }
+
+  async function run() {
+    await document.fonts.ready;
+    var carta = $('#carta'), carta2 = $('#carta2'), panel = $('#panel');
+    var w1 = carta.contentWindow, w2 = carta2.contentWindow, wp = panel.contentWindow;
+    var d1 = carta.contentDocument, dp = panel.contentDocument;
+
+    T0 = performance.now();
+    progress();
+
+    /* --- 1 · portada --- */
+    await sleep(3400);
+
+    /* --- 2 · cliente --- */
+    show('s2');
+    await sleep(900);
+    await scrollTo(w1, 620, 2600);
+    await sleep(300);
+    $('#cap2').innerHTML = 'La carta del día, <b>con los precios al instante</b>.';
+    await scrollTo(w1, 1180, 2200);
+    await sleep(1800);
+
+    /* --- 3 · panel --- */
+    show('s3');
+    await sleep(1200);
+
+    var pct = dp.querySelector('[data-pct="pizzas"]');
+    var apply = dp.querySelector('[data-act="apply"][data-cat="pizzas"]');
+    var K = 0.5799;
+
+    var pPct = pointAt(panel, pct, K);
+    await moveTo(pPct, 900);
+    clickFx(pPct);
+    await sleep(220);
+    await typeInto(pct, '10', 260);
+    await sleep(600);
+
+    var pApply = pointAt(panel, apply, K);
+    await moveTo(pApply, 800);
+    clickFx(pApply);
+    await sleep(120);
+    apply.click();
+    await sleep(2600);
+
+    var pub = dp.querySelector('[data-act="publish"]');
+    var pPub = pointAt(panel, pub, K);
+    await moveTo(pPub, 900);
+    clickFx(pPub);
+    await sleep(120);
+    pub.click();
+    await sleep(1500);
+    cursor.classList.remove('on');
+    await sleep(900);
+
+    /* --- 4 · el cliente ve el cambio --- */
+    show('s4');
+    await sleep(1100);
+    await scrollTo(w2, 1500, 2400);
+    await sleep(2600);
+
+    /* --- 5 · QR --- */
+    show('s5');
+    await sleep(4200);
+
+    /* --- 6 · cierre --- */
+    show('s6');
+    await sleep(6000);
+  }
+
+  window.begin = run;
+  window.__ready = true;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+PCT-BEFORE ✗ Evaluation error: SyntaxError: Failed to execute 'querySelector' on 'Document': '[data-price= pizzas:0]' is not a valid selector.
+    at <anonymous>:1:10
+PCT-AFTER  ✗ Evaluation error: SyntaxError: Failed to execute 'querySelector' on 'Document': '[data-price= pizzas:0]' is not a valid selector.
+    at <anonymous>:1:10
+PCT-TOAST  "+10% en Pizzas a la piedra · 5 precios actualizadosDeshacer"
+[agent-browser] restore: missing; save: saved
+PCT-PREVIEW "2.900"
+[agent-browser] restore: missing; save: saved
+PCT-UNDO   ✗ Evaluation error: SyntaxError: Failed to execute 'querySelector' on 'Document': '[data-price= pizzas:0]' is not a valid selector.
+    at <anonymous>:1:10
+READER base="19px"
+[agent-browser] restore: missing; save: saved big=[agent-browser] restore: missing; save: saved
+"21.5px"
+CONSOLE-ERRORS: ✗ 
+[agent-browser] restore: missing; save: saved

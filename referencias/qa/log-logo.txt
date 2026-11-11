@@ -1,0 +1,16 @@
+a-trattoria 390 :: "{\"logo\":\"58x31\",\"natural\":\"498x239\",\"headH\":61,\"overflow\":false,\"broken\":[]}"
+[agent-browser] restore: missing; save: saved
+a-trattoria 1440 :: "{\"logo\":\"72x38\",\"natural\":\"498x239\",\"headH\":67,\"overflow\":false,\"broken\":[]}"
+[agent-browser] restore: missing; save: saved
+b-noche 390 :: "{\"logo\":\"68x36\",\"natural\":\"498x239\",\"headH\":40,\"overflow\":false,\"broken\":[]}"
+[agent-browser] restore: missing; save: saved
+b-noche 1440 :: [agent-browser] restore: missing; save: saved
+"{\"logo\":\"68x36\",\"natural\":\"498x239\",\"headH\":36,\"overflow\":false,\"broken\":[]}"
+c-carta 390 :: "{\"logo\":\"117x56\",\"natural\":\"498x239\",\"headH\":163,\"overflow\":false,\"broken\":[]}"
+[agent-browser] restore: missing; save: saved
+c-carta 1440 :: [agent-browser] restore: missing; save: saved
+"{\"logo\":\"117x56\",\"natural\":\"498x239\",\"headH\":163,\"overflow\":false,\"broken\":[]}"
+PANEL :: "{\"brand\":\"56x29\",\"pv\":\"48x23\",\"overflow\":false}"
+[agent-browser] restore: missing; save: saved
+TENT :: "{\"logo\":\"174x84\",\"tentH\":533}"
+[agent-browser] restore: missing; save: saved

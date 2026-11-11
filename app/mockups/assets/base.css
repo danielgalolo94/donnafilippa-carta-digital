@@ -1,0 +1,122 @@
+/* ===========================================================
+   Base compartida de los mockups · DG Soluciones IT
+   Reset mínimo + barra de revisión (no forma parte del diseño)
+   =========================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+img, svg { max-width: 100%; }
+img { display: block; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2px solid #27C8E8; outline-offset: 2px; border-radius: 4px; }
+
+/* --- barra de revisión (mockup chrome) --- */
+.reviewbar {
+  position: sticky; top: 0; z-index: 90;
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 10px;
+  background: #0B0B0C; color: #E9E9EC;
+  font: 500 11.5px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .05em;
+  border-bottom: 1px solid #232326;
+}
+.reviewbar .mk {
+  display: inline-flex; align-items: center; gap: 7px;
+  color: #9A9AA2; white-space: nowrap; min-width: 0;
+}
+.reviewbar .mk b { color: #fff; font-weight: 700; }
+.reviewbar .dot { width: 7px; height: 7px; border-radius: 50%; background: #27C8E8; flex: none; }
+.reviewbar .back {
+  text-decoration: none; color: #9A9AA2; padding: 5px 7px; border-radius: 6px;
+  border: 1px solid #2A2A2F; line-height: 1;
+}
+.reviewbar .back:hover { color: #fff; border-color: #3A3A42; }
+.reviewbar nav { display: flex; gap: 3px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
+.reviewbar nav::-webkit-scrollbar { display: none; }
+.reviewbar nav button {
+  padding: 7px 12px; border-radius: 999px; color: #A9A9B2; white-space: nowrap;
+  font: 600 11.5px/1 inherit; transition: background .15s, color .15s;
+}
+.reviewbar nav button:hover { color: #fff; background: #1C1C20; }
+.reviewbar nav button[aria-selected="true"] { background: #F5F5F7; color: #0B0B0C; }
+.reviewbar .hint { display: none; color: #6E6E78; }
+
+@media (max-width: 640px) {
+  .reviewbar { gap: 6px; padding: 6px 8px; }
+  .reviewbar .mk span { display: none; }
+  .reviewbar nav button { padding: 7px 9px; font-size: 10.5px; }
+  .reviewbar .back { display: none; }
+}
+
+/* --- vistas: una sola visible --- */
+[data-view="carta"] #panel, [data-view="carta"] #qr,
+[data-view="panel"] #carta, [data-view="panel"] #qr,
+[data-view="qr"] #carta, [data-view="qr"] #panel { display: none; }
+
+/* --- pie DG (marca del cliente arriba, DG abajo) --- */
+.dg-credit {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 18px 16px 26px; font: 500 11px/1.4 Inter, system-ui, sans-serif;
+  color: #8A8578; letter-spacing: .02em; text-align: center; flex-wrap: wrap;
+}
+.dg-credit img { height: 18px; width: auto; opacity: .9; }
+.dg-credit b { color: #1D6FD6; font-weight: 700; }
+.dg-credit i { color: #27C8E8; font-style: normal; font-weight: 700; }
+
+/* ===========================================================
+   Vista "QR de mesa" — compartida por los 3 mockups
+   =========================================================== */
+.qr-view {
+  min-height: calc(100dvh - 38px);
+  padding: 30px 16px 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+  background: var(--qr-bg, #F2EEE7);
+  font-family: Inter, system-ui, sans-serif;
+}
+.qr-view .qr-lead {
+  margin: 0; font-size: 11px; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: #8A8278;
+}
+.tent {
+  width: min(400px, 100%); background: #fff; border-radius: 20px;
+  padding: 28px 24px 22px; text-align: center; color: #16110F;
+  box-shadow: 0 26px 60px rgba(24, 14, 8, .18), 0 1px 0 rgba(0, 0, 0, .04);
+  position: relative; overflow: hidden;
+}
+.tent::before {
+  content: ""; position: absolute; inset: 0 0 auto; height: 6px;
+  background: var(--qr-acc, #9F3B27);
+}
+.tent .tent-logo {
+  display: block; width: 192px; height: auto; margin: 10px auto 12px;
+}
+.tent h2 {
+  margin: 0; font-family: var(--qr-serif, Fraunces, Georgia, serif);
+  font-size: 26px; line-height: 1.05; letter-spacing: -.01em;
+}
+.tent .tent-sub {
+  margin: 5px 0 16px; font-size: 10.5px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: #8B8177;
+}
+.tent .tent-qr {
+  width: 178px; height: 178px; margin: 0 auto 12px; padding: 10px;
+  border: 1px solid #EAE4DD; border-radius: 14px; background: #fff;
+}
+.tent .tent-cta { margin: 0; font-size: 13px; font-weight: 700; }
+.tent .tent-small { margin: 4px 0 0; font-size: 11.5px; color: #7A736B; line-height: 1.45; }
+.tent .tent-url {
+  display: inline-block; margin-top: 12px; padding: 6px 10px; border-radius: 999px;
+  background: #F5F2ED; color: #4A443D; font: 600 11px/1 ui-monospace, monospace;
+}
+.tent .tent-foot {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  margin-top: 16px; padding-top: 12px; border-top: 1px solid #EFEAE4;
+  font-size: 10px; color: #9A938B;
+}
+.tent .tent-foot img { height: 13px; width: auto; opacity: .8; }
+.qr-note {
+  width: min(400px, 100%); margin: 0; text-align: center;
+  font-size: 11.5px; line-height: 1.5; color: #8A8278;
+}
