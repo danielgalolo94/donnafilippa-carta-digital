@@ -111,7 +111,24 @@
 
   .cat{padding-top:46px; scroll-margin-top:150px}
   .cat:first-child{padding-top:40px}
-  .cat-h{text-align:center; padding-bottom:26px}
+  .cat-h{text-align:center; padding-bottom:26px; position:relative}
+  .cat-h.has-bg{
+    margin:-6px -22px 26px; padding:44px 22px 30px;
+    border-radius:6px; overflow:hidden; isolation:isolate;
+    background:#2A211A center/cover no-repeat;
+  }
+  @media(min-width:640px){ .cat-h.has-bg{margin:-6px -46px 26px; padding:50px 46px 34px} }
+  .cat-h.has-bg::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(29,22,16,.48), rgba(29,22,16,.62));
+    z-index:0;
+  }
+  .cat-h.has-bg > *{position:relative; z-index:1}
+  .cat-h.has-bg .k{color:#F5D9D2}
+  .cat-h.has-bg h2,.cat-h.has-bg .note{color:#FFF8EE}
+  .cat-h.has-bg .note{opacity:.92}
+  .cat-h.has-bg .rule{color:rgba(255,248,238,.45)}
+  .cat-h.has-bg .rule i{background:#FFD9D4}
   .cat-h .k{
     margin:0 0 14px; font-size:9px; font-weight:700; letter-spacing:.28em;
     text-transform:uppercase; color:var(--rojo);
@@ -216,6 +233,7 @@
         <a href="#pizzas">Pizzas</a>
         <a href="#pastas">Pastas</a>
         <a href="#postres">Postres</a>
+        <a href="#historia">Historia</a>
       </div>
     </nav>
   </div>
@@ -232,7 +250,7 @@
     <div class="sheet">
 
       <section class="cat" id="empezar">
-        <header class="cat-h">
+        <header class="cat-h has-bg" style="background-image:url('img/bg/entradas.jpg')">
           <p class="k">Para empezar y compartir</p>
           <h2>Entradas</h2>
           <div class="rule"><i></i></div>
@@ -274,7 +292,7 @@
       </section>
 
       <section class="cat" id="pizzas">
-        <header class="cat-h">
+        <header class="cat-h has-bg" style="background-image:url('img/bg/pizzas.jpg')">
           <p class="k">Clásicas</p>
           <h2>Pizzas</h2>
           <div class="rule"><i></i></div>
@@ -327,7 +345,7 @@
       </section>
 
       <section class="cat" id="pastas">
-        <header class="cat-h">
+        <header class="cat-h has-bg" style="background-image:url('img/bg/pastas.jpg')">
           <p class="k">Y salsas</p>
           <h2>Pastas</h2>
           <div class="rule"><i></i></div>
@@ -363,7 +381,7 @@
       </section>
 
       <section class="cat" id="postres">
-        <header class="cat-h">
+        <header class="cat-h has-bg" style="background-image:url('img/bg/postres.jpg')">
           <p class="k">El final feliz</p>
           <h2>Postres</h2>
           <div class="rule"><i></i></div>
@@ -385,6 +403,23 @@
           <p>Con crema batida.</p>
           <div class="tags"><span class="g">Veg</span></div>
         </article>
+      </section>
+
+      <section class="cat" id="historia" style="padding-top:40px">
+        <header class="cat-h">
+          <p class="k">Nuestra casa</p>
+          <h2>Así comenzó nuestra historia...</h2>
+          <div class="rule"><i></i></div>
+        </header>
+        <div style="max-width:62ch; margin:0 auto; font-size:13.5px; line-height:1.85; color:var(--tinta2)">
+          <p style="margin:0 0 14px">Allá por el año 1986, José Luis Cabutti, luego de haber trabajado como empleado en el rubro gastronómico, decidió crecer y adquirió la mitad de una icónica pizzería geselina.</p>
+          <p style="margin:0 0 14px">En el mes de octubre del año ‘86 se instaló en la tradicional esquina de Paseo 102 y Av. 3 dando inicio a un emblema de la gastronomía local.</p>
+          <p style="margin:0 0 14px">En el año 1994 comenzaron las primeras reformas de todas las instalaciones para brindar un mejor servicio a nuestros queridos geselinos y turistas.</p>
+          <p style="margin:0 0 14px">A partir de 1996, y por siete años consecutivos, recibimos el premio <b style="color:var(--tinta)">“Dunas de Oro”</b> en el rubro. Un premio por la excelencia, calidad y atención, otorgado por la Secretaría de Turismo de Villa Gesell junto al programa radial <i>Viva la Vida</i> conducido por el querido Abel Goicochea. Orgullosos podemos contarles que nos otorgaron el premio todos y cada año en que fue realizado hasta 2002.</p>
+          <p style="margin:0 0 14px">En el año 2012 el nombre que nos acompañó durante casi 26 hermosos años debió cambiarse y nació <b style="color:var(--tinta)">“Donna Filippa”</b> en honor a la abuela inmigrante de Italia, quien supo transmitir enseñanzas y costumbres a la familia.</p>
+          <p style="margin:0 0 14px">Llevamos 40 años brindando un servicio y productos de calidad a nuestros clientes, ofreciendo nuestras clásicas pizzas, pastas, carnes y demás con el sabor que nos caracteriza. Siempre es un placer.</p>
+          <p style="margin:18px 0 0; font-family:var(--serif); font-size:20px; font-style:italic; color:var(--rojo); text-align:center">Buon appetito!</p>
+        </div>
       </section>
 
       <div class="stamp">
