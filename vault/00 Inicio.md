@@ -8,9 +8,9 @@ Una app para que el restaurant **genere y mantenga su carta**, y el cliente la v
 
 ## Estado de un vistazo
 - **Etapa actual:** 3 · Diseñar (mockups)
-- **Hecho:** marca extraída de Instagram, paleta, panel del editor, 3 direcciones de carta.
-- **Falta:** aprobación de Daniel/cliente, alcance en PDF, build real.
-- **Próximo paso:** que Daniel elija una de las 3 direcciones → [[07 Mockups]]
+- **Hecho:** marca extraída de Instagram, paleta, panel del editor, 4 direcciones de carta.
+- **Falta:** aprobación de Daniel/cliente, alcance, datos reales y build final.
+- **Próximo paso:** que Daniel elija una de las 4 direcciones → [[07 Mockups]]
 
 ## Índice
 - [[01 Proyecto]] — el negocio, la gente, el dolor real
