@@ -184,16 +184,18 @@ p{margin:0}
 
 /* ---------- cartas ---------- */
 .cards{display:grid; gap:20px}
-@media(min-width:820px){ .cards{grid-template-columns:repeat(3,1fr)} }
+@media(min-width:820px){ .cards{grid-template-columns:repeat(2,1fr)} }
+@media(min-width:1100px){ .cards{grid-template-columns:repeat(4,1fr); gap:16px} }
 .card{
   background:#fff; border:1px solid var(--line); border-radius:var(--r); overflow:hidden;
   display:flex; flex-direction:column; transition:transform .18s, box-shadow .18s;
 }
 .card:hover{transform:translateY(-3px); box-shadow:var(--shadow)}
-.card .shot{position:relative; background:linear-gradient(165deg,#F6EFE7,#EBDDCD); padding:22px 22px 0; overflow:hidden}
+.card .shot{position:relative; background:linear-gradient(165deg,#F6EFE7,#EBDDCD); padding:20px 18px 0; overflow:hidden; min-height:240px; display:flex; align-items:flex-end; justify-content:center}
+.card .shot::after{content:""; position:absolute; inset:auto 0 0; height:40%; background:linear-gradient(0deg, rgba(247,241,233,.55), transparent); pointer-events:none}
 .card .shot img{
-  width:74%; margin-inline:auto; border-radius:20px 20px 0 0; border:7px solid #17110F;
-  border-bottom:0; box-shadow:0 18px 34px -18px rgba(23,17,15,.5);
+  width:78%; max-width:180px; margin-inline:auto; border-radius:18px 18px 0 0; border:6px solid #17110F;
+  border-bottom:0; box-shadow:0 18px 34px -18px rgba(23,17,15,.5); position:relative; z-index:1;
 }
 .card .badge{
   position:absolute; left:14px; top:14px; z-index:2;
@@ -209,6 +211,11 @@ p{margin:0}
 .card-actions{display:flex; gap:8px; margin-top:18px}
 .card-actions .btn{height:40px; font-size:12.5px; padding:0 12px; border-radius:9px}
 .card-actions .btn:first-child{flex:1}
+
+:focus-visible{outline:2px solid var(--blue); outline-offset:3px}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important}
+}
 
 /* ---------- panel ---------- */
 .split{display:grid; gap:34px; align-items:center}
